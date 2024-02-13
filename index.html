@@ -1,0 +1,622 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sheba Capital Stock Portal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="   https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.45.2/apexcharts.min.css">
+    <link rel="stylesheet" href="asset/css/custom.css">
+</head>
+
+<body>
+
+
+    <div id="topbar">
+        <div class="d-flex justify-content-between">
+            <div class="left">
+                <img src="asset/image/bdnf.png" alt="Bangladesh National Flag">
+                <b class="d-inline">DSE 11 February 2024</b>
+            </div>
+
+            <div class="right">
+                <i class="fa-solid fa-clock"></i>
+                <b>Market will be open after 17 Hours 25 Minutes 33 Seconds</b>
+            </div>
+        </div>
+    </div>
+
+    <div id="top-search-bar">
+        <div class="row justify-content-between align-items-center">
+            <div class="left col-md-4 order-md-1 order-1 col-6">
+                <div class="top-logo">
+                    <img src="asset/image/Sheba Capital_Logo-01.png" alt="Sheba Capital Logo">
+                </div>
+            </div>
+            <div class="center col-md-4 text-center order-md-2 order-3 col-12 mt-2">
+                <form>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search for news, symbols & companies..."
+                            aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <button class="btn btn-outline-success" type="button" id="button-addon2"><i
+                                class="fas fa-search"></i></button>
+                    </div>
+                </form>
+            </div>
+            <div class="right col-md-4 text-end order-md-3 order-2 col-6">
+                <a href="" class="btn btn-outline-success">Sign In</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="top-nav">
+        <ul>
+            <li><a>Home</a></li>
+            <li><a>Company</a></li>
+            <li class="dropdown"><a>News</a>
+                <div class="dropdown-box">
+                    <ul>
+                        <li>
+                            <a>Corporate</a>
+
+                        </li>
+                        <li>
+                            <a>Financial</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li><a>Analysis Tools</a></li>
+            <li><a>Advanced Chart</a></li>
+        </ul>
+    </div>
+
+    <div id="breaking_news" class="row">
+        <div class="heading col-2">
+            <div class="rectangle">
+                <h6>Breaking News</h6>
+                <div class="triangle">
+
+                </div>
+            </div>
+        </div>
+        <div class="news col-10">
+            <marquee onmouseover="this.stop();" onmouseout="this.start();">
+                <a>This is basic example of marquee <i class="fa-solid fa-arrow-right"></i> </a>
+                <a>This is basic example of marquee <i class="fa-solid fa-arrow-right"></i> </a>
+                <a>This is basic example of marquee <i class="fa-solid fa-arrow-right"></i> </a>
+                <a>This is basic example of marquee <i class="fa-solid fa-arrow-right"></i> </a>
+                <a>This is basic example of marquee <i class="fa-solid fa-arrow-right"></i> </a>
+                <a>This is basic example of marquee <i class="fa-solid fa-arrow-right"></i> </a>
+                <a>This is basic example of marquee <i class="fa-solid fa-arrow-right"></i> </a>
+                <a>This is basic example of marquee <i class="fa-solid fa-arrow-right"></i> </a>
+                <a>This is basic example of marquee <i class="fa-solid fa-arrow-right"></i> </a>
+                <a>This is basic example of marquee <i class="fa-solid fa-arrow-right"></i> </a>
+                <a>This is basic example of marquee <i class="fa-solid fa-arrow-right"></i> </a>
+                <a>This is basic example of marquee <i class="fa-solid fa-arrow-right"></i> </a>
+                <a>This is basic example of marquee <i class="fa-solid fa-arrow-right"></i> </a>
+                <a>This is basic example of marquee <i class="fa-solid fa-arrow-right"></i> </a>
+                <a>This is basic example of marquee <i class="fa-solid fa-arrow-right"></i> </a>
+                <a>This is basic example of marquee <i class="fa-solid fa-arrow-right"></i> </a>
+                <a>This is basic example of marquee <i class="fa-solid fa-arrow-right"></i> </a>
+                <a>This is basic example of marquee <i class="fa-solid fa-arrow-right"></i> </a>
+
+            </marquee>
+        </div>
+    </div>
+
+    <div id="main-container">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="row first-chart-section">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Index Chart</h5>
+                                <div id="index-chart"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Strength Meter</h5>
+                                <div id="strengthMeter"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row second-chart-section mt-3">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Column Chart</h5>
+                                <div id="columnChart"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Index Mover</h5>
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Symbol</th>
+                                                <th>Qty</th>
+                                                <th>Value</th>
+                                                <th>Max.P</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>SBACBANK</td>
+                                                <td>12.1000</td>
+                                                <td>0.70</td>
+                                                <td>6.14</td>
+                                            </tr>
+                                            <tr>
+                                                <td>SBACBANK</td>
+                                                <td>12.1000</td>
+                                                <td>0.70</td>
+                                                <td>6.14</td>
+                                            </tr>
+                                            <tr>
+                                                <td>SBACBANK</td>
+                                                <td>12.1000</td>
+                                                <td>0.70</td>
+                                                <td>6.14</td>
+                                            </tr>
+                                            <tr>
+                                                <td>SBACBANK</td>
+                                                <td>12.1000</td>
+                                                <td>0.70</td>
+                                                <td>6.14</td>
+                                            </tr>
+                                            <tr>
+                                                <td>SBACBANK</td>
+                                                <td>12.1000</td>
+                                                <td>0.70</td>
+                                                <td>6.14</td>
+                                            </tr>
+                                            <tr>
+                                                <td>SBACBANK</td>
+                                                <td>12.1000</td>
+                                                <td>0.70</td>
+                                                <td>6.14</td>
+                                            </tr>
+                                            <tr>
+                                                <td>SBACBANK</td>
+                                                <td>12.1000</td>
+                                                <td>0.70</td>
+                                                <td>6.14</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Top Trade</h5>
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Symbol</th>
+                                                <th>Qty</th>
+                                                <th>Value</th>
+                                                <th>Max.P</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>SBACBANK</td>
+                                                <td>12.1000</td>
+                                                <td>0.70</td>
+                                                <td>6.14</td>
+                                            </tr>
+                                            <tr>
+                                                <td>SBACBANK</td>
+                                                <td>12.1000</td>
+                                                <td>0.70</td>
+                                                <td>6.14</td>
+                                            </tr>
+                                            <tr>
+                                                <td>SBACBANK</td>
+                                                <td>12.1000</td>
+                                                <td>0.70</td>
+                                                <td>6.14</td>
+                                            </tr>
+                                            <tr>
+                                                <td>SBACBANK</td>
+                                                <td>12.1000</td>
+                                                <td>0.70</td>
+                                                <td>6.14</td>
+                                            </tr>
+                                            <tr>
+                                                <td>SBACBANK</td>
+                                                <td>12.1000</td>
+                                                <td>0.70</td>
+                                                <td>6.14</td>
+                                            </tr>
+                                            <tr>
+                                                <td>SBACBANK</td>
+                                                <td>12.1000</td>
+                                                <td>0.70</td>
+                                                <td>6.14</td>
+                                            </tr>
+                                            <tr>
+                                                <td>SBACBANK</td>
+                                                <td>12.1000</td>
+                                                <td>0.70</td>
+                                                <td>6.14</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="news-section" class="mt-3">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
+                                data-bs-target="#corporate-news" type="button" role="tab" aria-controls="home"
+                                aria-selected="true">Corporate News</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="profile-tab" data-bs-toggle="tab"
+                                data-bs-target="#financial-news" type="button" role="tab" aria-controls="profile"
+                                aria-selected="false">Financial News</button>
+                        </li>
+
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="corporate-news" role="tabpanel"
+                            aria-labelledby="home-tab">
+
+
+                            <div class="row mt-3">
+                                <div class="col-sm-3">
+                                    <div class="img-box">
+                                        <img src="asset/image/Sheba Capital_Logo-01.png" alt="Corporate News Image">
+                                    </div>
+                                </div>
+                                <div class="col-sm-9">
+                                    <div class="news-nav">
+                                        <a href="" class="news-category-link">Corporate News</a>
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                        <a href="" class="news-scorce-link">Corporate News</a>
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                        <span>1 week ago</span>
+                                    </div>
+                                    <div class="news-title">
+                                        <h5><a href="">Square Pharma's operating profit drops 5% in Oct-Dec</a></h5>
+                                    </div>
+                                    <div class="news-description">
+                                        <p>Square Pharmaceuticals witnessed a 5% year-on-year drop in operating profit during the October-December quarter of the fiscal year 2023-24.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-sm-3">
+                                    <div class="img-box">
+                                        <img src="asset/image/images.jpg" alt="Corporate News Image">
+                                    </div>
+                                </div>
+                                <div class="col-sm-9">
+                                    <div class="news-nav">
+                                        <a href="" class="news-category-link">Corporate News</a>
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                        <a href="" class="news-scorce-link">Corporate News</a>
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                        <span>1 week ago</span>
+                                    </div>
+                                    <div class="news-title">
+                                        <h5><a href="">Square Pharma's operating profit drops 5% in Oct-Dec</a></h5>
+                                    </div>
+                                    <div class="news-description">
+                                        <p>Square Pharmaceuticals witnessed a 5% year-on-year drop in operating profit during the October-December quarter of the fiscal year 2023-24.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-sm-3">
+                                    <div class="img-box">
+                                        <img src="asset/image/Sheba Capital_Logo-01.png" alt="Corporate News Image">
+                                    </div>
+                                </div>
+                                <div class="col-sm-9">
+                                    <div class="news-nav">
+                                        <a href="" class="news-category-link">Corporate News</a>
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                        <a href="" class="news-scorce-link">Corporate News</a>
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                        <span>1 week ago</span>
+                                    </div>
+                                    <div class="news-title">
+                                        <h5><a href="">Square Pharma's operating profit drops 5% in Oct-Dec</a></h5>
+                                    </div>
+                                    <div class="news-description">
+                                        <p>Square Pharmaceuticals witnessed a 5% year-on-year drop in operating profit during the October-December quarter of the fiscal year 2023-24.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-sm-3">
+                                    <div class="img-box">
+                                        <img src="asset/image/Prothom_Alo_building_2023.jpg" alt="Corporate News Image">
+                                    </div>
+                                </div>
+                                <div class="col-sm-9">
+                                    <div class="news-nav">
+                                        <a href="" class="news-category-link">Corporate News</a>
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                        <a href="" class="news-scorce-link">Corporate News</a>
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                        <span>1 week ago</span>
+                                    </div>
+                                    <div class="news-title">
+                                        <h5><a href="">Square Pharma's operating profit drops 5% in Oct-Dec</a></h5>
+                                    </div>
+                                    <div class="news-description">
+                                        <p>Square Pharmaceuticals witnessed a 5% year-on-year drop in operating profit during the October-December quarter of the fiscal year 2023-24.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+
+                            <div class="text-end">
+                                <a href="" class="btn btn-success">View More...</a>
+                            </div>
+                          
+
+
+
+                        </div>
+                        <div class="tab-pane fade" id="financial-news" role="tabpanel" aria-labelledby="profile-tab">
+                            <div class="row mt-3">
+                                <div class="col-sm-3">
+                                    <div class="img-box">
+                                        <img src="asset/image/Prothom_Alo_building_2023.jpg" alt="Corporate News Image">
+                                    </div>
+                                </div>
+                                <div class="col-sm-9">
+                                    <div class="news-nav">
+                                        <a href="" class="news-category-link">Corporate News</a>
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                        <a href="" class="news-scorce-link">Corporate News</a>
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                        <span>1 week ago</span>
+                                    </div>
+                                    <div class="news-title">
+                                        <h5><a href="">Square Pharma's operating profit drops 5% in Oct-Dec</a></h5>
+                                    </div>
+                                    <div class="news-description">
+                                        <p>Square Pharmaceuticals witnessed a 5% year-on-year drop in operating profit during the October-December quarter of the fiscal year 2023-24.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-sm-3">
+                                    <div class="img-box">
+                                        <img src="asset/image/Sheba Capital_Logo-01.png" alt="Corporate News Image">
+                                    </div>
+                                </div>
+                                <div class="col-sm-9">
+                                    <div class="news-nav">
+                                        <a href="" class="news-category-link">Corporate News</a>
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                        <a href="" class="news-scorce-link">Corporate News</a>
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                        <span>1 week ago</span>
+                                    </div>
+                                    <div class="news-title">
+                                        <h5><a href="">Square Pharma's operating profit drops 5% in Oct-Dec</a></h5>
+                                    </div>
+                                    <div class="news-description">
+                                        <p>Square Pharmaceuticals witnessed a 5% year-on-year drop in operating profit during the October-December quarter of the fiscal year 2023-24.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-sm-3">
+                                    <div class="img-box">
+                                        <img src="asset/image/images.jpg" alt="Corporate News Image">
+                                    </div>
+                                </div>
+                                <div class="col-sm-9">
+                                    <div class="news-nav">
+                                        <a href="" class="news-category-link">Corporate News</a>
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                        <a href="" class="news-scorce-link">Corporate News</a>
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                        <span>1 week ago</span>
+                                    </div>
+                                    <div class="news-title">
+                                        <h5><a href="">Square Pharma's operating profit drops 5% in Oct-Dec</a></h5>
+                                    </div>
+                                    <div class="news-description">
+                                        <p>Square Pharmaceuticals witnessed a 5% year-on-year drop in operating profit during the October-December quarter of the fiscal year 2023-24.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-sm-3">
+                                    <div class="img-box">
+                                        <img src="asset/image/Sheba Capital_Logo-01.png" alt="Corporate News Image">
+                                    </div>
+                                </div>
+                                <div class="col-sm-9">
+                                    <div class="news-nav">
+                                        <a href="" class="news-category-link">Corporate News</a>
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                        <a href="" class="news-scorce-link">Corporate News</a>
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                        <span>1 week ago</span>
+                                    </div>
+                                    <div class="news-title">
+                                        <h5><a href="">Square Pharma's operating profit drops 5% in Oct-Dec</a></h5>
+                                    </div>
+                                    <div class="news-description">
+                                        <p>Square Pharmaceuticals witnessed a 5% year-on-year drop in operating profit during the October-December quarter of the fiscal year 2023-24.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="text-end">
+                                <a href="" class="btn btn-success">View More...</a>
+                            </div>
+                          
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="sidebar col-md-3">
+                <a class="tt-button btn btn-success">TT</a>
+
+                <div class="card mt-2">
+                    <div class="card-body">
+                        <h5 class="card-title">My Watchlists</h5>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Symbol</th>
+                                        <th>Last Price</th>
+                                        <th>Change</th>
+                                        <th>%Change</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>SBACBANK</td>
+                                        <td>12.1000</td>
+                                        <td>0.70</td>
+                                        <td>6.14%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mt-2">
+                    <div class="card-body">
+                        <h5 class="card-title">Recently Viewed</h5>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Symbol</th>
+                                        <th>Last Price</th>
+                                        <th>Change</th>
+                                        <th>%Change</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>SBACBANK</td>
+                                        <td>12.1000</td>
+                                        <td>0.70</td>
+                                        <td>6.14%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mt-2">
+                    <div class="card-body">
+                        <h5 class="card-title">Block Transaction</h5>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Symbol</th>
+                                        <th>Qty</th>
+                                        <th>Value</th>
+                                        <th>Max.P</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>SBACBANK</td>
+                                        <td>12.1000</td>
+                                        <td>0.70</td>
+                                        <td>6.14</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <hr>
+    <div id="footer">
+        <div class="row">
+            <div class="col-md-4">
+                <h5 class="footer_nav_heading">Services</h5>
+                <ul>
+                    <li> <a href="">Why Choose TT Now</a></li>
+                    <li><a href="">Pricing</a></li>
+                </ul>
+             
+                
+            </div>
+            <div class="col-md-4">
+                <h5 class="footer_nav_heading">Resources</h5>
+                <ul>
+                    <li><a href="">Privacy Policy</a></li>
+                    <li><a href="">Terms and Condition</a></li>
+                    <li><a href="">Contact Us</a></li>
+                </ul>
+             
+                
+              
+            </div>
+            <div class="col-md-4">
+                <div class="footer_logo"><img src="asset/image/Sheba Capital_Logo-01.png" alt=""></div>
+                <div class="d-inline-block">
+                    <a class="social_icon" href=""><i class="fa-brands fa-facebook-f"></i></a>
+                </div>
+                <div class="d-inline-block">
+                    <a class="social_icon" href=""><i class="fa-brands fa-x-twitter"></i></a>
+                </div>
+                <div class="d-inline-block">
+                    <a class="social_icon" href=""><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+                <h5 class="footer_nav_heading">Subscribe to our newsletter</h5>
+                <div class="subscribe_form">
+                    0
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.45.2/apexcharts.min.js"></script>
+    <script src="asset/js/chart/indexChart.js"></script>
+    <script src="asset/js/chart/strengthMeter.js"></script>
+    <script src="asset/js/chart/columnChart.js"></script>
+</body>
+
+</html>
